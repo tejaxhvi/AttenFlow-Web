@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Navigate, useNavigate } from 'react-router-dom'
 
 export default function Hero() {
+  const [loggedIn, setLoggedIn] = useState(false)
+
+  let navigate = useNavigate();
   return (
     <section className="relative flex h-screen w-full items-center justify-center pt-20">
       <div className="mx-4 max-w-4xl rounded-2xl p-8 text-center">
@@ -13,14 +17,14 @@ export default function Hero() {
         <div className="flex items-center justify-center gap-4">
           <button
             type="button"
-            className="inline-flex h-12 items-center justify-center rounded-md bg-white px-6 font-mono text-base font-extrabold text-gray-900 shadow-sm ring-1 ring-white/60 transition-colors duration-200 hover:bg-white/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-          >
+            className="cursor-pointer inline-flex h-12 items-center justify-center rounded-md bg-white px-6 font-mono text-base font-extrabold text-gray-900 shadow-sm ring-1 ring-white/60 transition-colors duration-200 hover:bg-white/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            onClick={ () => navigate("/login")}>
             Get Started
           </button>
           <button
             type="button"
-            className="inline-flex h-12 items-center justify-center rounded-md bg-transparent px-6 font-mono text-base font-extrabold text-white ring-1 ring-white/70 backdrop-blur-sm transition-colors duration-200 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-          >
+            className="cursor-pointer inline-flex h-12 items-center justify-center rounded-md bg-transparent px-6 font-mono text-base font-extrabold text-white ring-1 ring-white/70 backdrop-blur-sm transition-colors duration-200 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            >
             Learn More
           </button>
         </div>
