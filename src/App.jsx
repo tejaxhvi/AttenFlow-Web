@@ -8,6 +8,7 @@ import Login from './pages/login'
 import Signin from './pages/signin'
 import Admin from './pages/admin';
 import Home from './pages/home';
+import AdminDashboard from './pages/admin_dashboard';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="admin" element={<Admin />} />
           <Route path="login" element={<Login />} />
           <Route path="faculty" element={<Signin/>} />
+          <Route paths="admin/dashboard" element={<AdminDashboard/>} />
             
         </Routes>
       </BrowserRouter>
